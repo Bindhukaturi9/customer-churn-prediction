@@ -724,7 +724,7 @@ try:
             )
 
             st.success(
-                " Database Updated Successfully!👍  please refresh the page 🔁 "
+                " Database Updated Successfully!👍  please refresh the page 🔁 and check  "
             )
 
 except Exception as e:
