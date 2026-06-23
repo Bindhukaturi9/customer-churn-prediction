@@ -364,9 +364,11 @@ if st.button("Predict & Save"):
     # Load Database
 
     df = pd.read_csv(DATABASE)
-    st.write("DATABASE FILE =", DATABASE)
-    st.write("ROWS BEFORE SAVE =", len(df))
-    st.write(df["customerID"].tolist())
+
+    df.columns = (
+        df.columns
+        .str.strip()
+    )
 
     current_id = (
         str(customer_id)
