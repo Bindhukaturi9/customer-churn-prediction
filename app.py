@@ -662,7 +662,11 @@ try:
     if update_mode:
 
         if st.button("Update Database"):
-
+            df = pd.read_csv(DATABASE)
+            df.columns = (
+                df.columns
+                .str.strip()
+            )
             edited_df["TotalCharges"] = (
                 edited_df["tenure"].astype(float)
                 * edited_df["MonthlyCharges"].astype(float)
