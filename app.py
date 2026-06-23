@@ -770,7 +770,10 @@ search_id = st.text_input(
 if st.button("Search"):
     
     df = pd.read_csv(DATABASE)
-
+    df.columns = (
+    df.columns
+    .str.strip()
+     )
     df["customerID"] = (
         df["customerID"]
         .astype(str)
