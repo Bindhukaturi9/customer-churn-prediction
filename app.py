@@ -849,7 +849,7 @@ if st.button("Delete"):
         )
 
         st.success(
-            "Customer Deleted Successfully"
+            "Customer Deleted Successfully!👍  please refresh the page 🔁 and check "
         )
 
     else:
