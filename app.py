@@ -818,6 +818,9 @@ if st.button("Search"):
 # DELETE CUSTOMER
 # --------------------------
 
+# DELETE CUSTOMER
+# --------------------------
+
 st.divider()
 
 delete_id = st.text_input(
@@ -825,42 +828,57 @@ delete_id = st.text_input(
 )
 
 if st.button("Delete"):
-    
+
     df = pd.read_csv(DATABASE)
 
-    df["customerID"] = (
-        df["customerID"]
-        .astype(str)
+    # Fix column names
+    df.columns = (
+        df.columns
         .str.strip()
-        .str.lower()
     )
 
-    delete_value = (
-        str(delete_id)
-        .strip()
-        .lower()
-    )
+    # Ensure customerID exists
+    if "customerID" not in df.columns:
 
-    if delete_value in df["customerID"].values:
-
-        df = df[
-            df["customerID"] != delete_value
-        ]
-
-        df.to_csv(
-            DATABASE,
-            index=False
-        )
-
-        st.success(
-            "Customer Deleted Successfully!👍  please refresh the page 🔁 and check "
+        st.error(
+            f"customerID column not found. Columns = {df.columns.tolist()}"
         )
 
     else:
 
-        st.error(
-            "Customer Not Found"
+        df["customerID"] = (
+            df["customerID"]
+            .astype(str)
+            .str.strip()
+            .str.lower()
         )
+
+        delete_value = (
+            str(delete_id)
+            .strip()
+            .lower()
+        )
+
+        if delete_value in df["customerID"].values:
+
+            df = df[
+                df["customerID"] != delete_value
+            ]
+
+            df.to_csv(
+                DATABASE,
+                index=False
+            )
+
+            st.success(
+                "Customer Deleted Successfully! 👍 Please refresh the page 🔁"
+            )
+
+        else:
+
+            st.error(
+                "Customer Not Found"
+            )
 
 # --------------------------
 # DOWNLOAD DATABASE
