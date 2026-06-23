@@ -1,0 +1,4 @@
+        customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,Prediction,Probability,RiskLevel
+1001,Female,0,No,No,0,No,No,DSL,No,No,No,No,No,No,Month-to-month,No,Bank transfer (automatic),0.0,0.0,0,48.67,MEDIUM 🟡
+1002,Female,1,Yes,Yes,90,No,No phone service,Fiber optic,No,No internet service,No internet service,Yes,Yes,Yes,One year,Yes,Bank transfer (automatic),200.0,18000.0,0,30.67,MEDIUM 🟡
+1003,Male,1,No,No,1,Yes,Yes,Fiber optic,No,No,No,No,Yes,Yes,Two year,Yes,Electronic check,70.0,70.0,1,52.27,MEDIUM 🟡
